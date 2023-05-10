@@ -7,6 +7,6 @@ struct potion_ {
     effect* effect;
 }
 
-typedef struct potion * potion_;
+typedef struct potion_ * Potion;
 
-potion createPotion(char name, effect effect);
+Potion createPotion(char name, effect effect);

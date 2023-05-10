@@ -9,7 +9,7 @@ struct effect_ {
     bool defense;
 }
 
-typedef struct effect_ * effect;
+typedef struct effect_ * Effect;
 
-effect createEffect(char name, bool health, bool attack, bool defense);
+Effect createEffect(char name, bool health, bool attack, bool defense);
 
