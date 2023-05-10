@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "Player.h"
 
 //Joueur principal
 struct  player_
