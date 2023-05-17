@@ -13,8 +13,8 @@ void affichemenu()
         printf("Nouvelle partie");
         break;
     case 2:
-        printf("Voici les crédits :\nHugo Assoignon | Louise Hortier | Jacques Mudoy | Loïck Mercier ");
-        printf("Dernière modif : 10/5/23");
+        printf("Voici les crédits :\nHugo Assoignon | Louise Hortier | Jacques Mudoy | Loïck Mercier\n");
+        printf("Dernière modif : 17/5/23");
         break;
     case 3:
         printf("Vous avez mis fin au jeu !!");//exit qui termine le porgramme avec le code succès qui correspond à la valeur 0 lors du return
@@ -26,6 +26,12 @@ void affichemenu()
     }
 }
 
+void Start()
+{
+    
+
+
+}
 int main()
 {
     affichemenu();
