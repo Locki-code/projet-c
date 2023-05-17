@@ -7,7 +7,7 @@ struct effect_ {
     bool health;
     bool attack;
     bool defense;
-}
+};
 
 typedef struct effect_ * Effect;
 
