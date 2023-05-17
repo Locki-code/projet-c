@@ -2,19 +2,13 @@
 #include <stdio.h>
 #include "Header/Player.h"
 
-//Joueur principal
-struct  player_
-{
-    int pv_max;
-    int pv;
-    int attack;
-    int defense;
-    int nb_cle;
+Position CreatePosition(x_, y_){
+    Position pos = malloc(sizeof(struct position_));
+    pos -> x = x_;
+    pos -> y = y_;
+}
 
-};
-typedef struct player_ * Player;
-
-Player CreatePlayer()
+Player CreatePlayer(int x_, int y_)
 {
     Player nouv = malloc(sizeof(struct player_));
     nouv->pv_max = 10;
@@ -22,4 +16,5 @@ Player CreatePlayer()
     nouv->attack = 2;
     nouv->defense = 1;
     nouv->nb_cle = 0;
+    nouv->pos = CreatePosition(x_, y_);
 }
