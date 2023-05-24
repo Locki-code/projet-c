@@ -1,16 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "Header/Ennemy.h"
 
-//Joueur principal
-struct  enemy_
-{
-    int pv;
-    int attack;
-    int defense;
-};
-typedef struct enemy_ * Enemy;
 
-Enemy CreatePlayer(int pv_, int attack_, int defense_)
+
+Enemy CreateEnemy(int pv_, int attack_, int defense_)
 {
     Enemy nouv = malloc(sizeof(struct enemy_));
     nouv->attack = attack_;
