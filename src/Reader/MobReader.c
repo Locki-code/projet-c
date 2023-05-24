@@ -26,8 +26,8 @@ int getValue(FILE *fp_, int t)
         t = fgetc(fp_);
         char tp = t;
         strncat(tempVal, &tp, 1);
-        val = atoi(tempVal);
     }
+    val = atoi(tempVal);
     return val;
 }
 
@@ -48,14 +48,16 @@ Enemy * readMobFile(char * nameFile)
         int pv = getValue(fp, txt);
         int str = getValue(fp, txt);
         int att = getValue(fp, txt);
-        //printf("%c:%d, %d, %d\n", name, pv, str, att);
         tab[it] = CreateEnemy(name, pv, str, att);
-        //printf("%c:%d, %d, %d\n", tab[it]->name, tab[it]->pv, tab[it]->defense, tab[it]->attack);
         txt = fgetc(fp);
-        if(txt != EOF)
-            skipline(fp, txt);
-
         it+=1;
     }
     return tab;
 }
+
+/*int main(){
+    Enemy * tab;
+    tab = readMobFile("C:/Users/jacqu/Desktop/Projet-C/projet-c/config/ennemy.mob");
+
+    printf("%c:%d, %d, %d\n", tab[1]->name, tab[1]->pv, tab[1]->defense, tab[1]->attack);
+}*/
