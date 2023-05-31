@@ -33,17 +33,3 @@ void dispPos(Player player){
     printf("%d \n%d \n", player->x, player->y);
     printf("Votre choix:");
 }
-
-
-
-int main(){
-    Player p1 = CreatePlayer(10, 5);
-
-    while(1)
-    {
-        dispPos(p1);
-        move(p1);
-    }
-}
-
-
