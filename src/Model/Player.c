@@ -2,12 +2,6 @@
 #include <stdio.h>
 #include "Header/Player.h"
 
-Position CreatePosition(x_, y_){
-    Position pos = malloc(sizeof(struct position_));
-    pos -> x = x_;
-    pos -> y = y_;
-}
-
 Player CreatePlayer(int x_, int y_)
 {
     Player nouv = malloc(sizeof(struct player_));
@@ -16,5 +10,6 @@ Player CreatePlayer(int x_, int y_)
     nouv->attack = 2;
     nouv->defense = 1;
     nouv->nb_cle = 0;
-    nouv->pos = CreatePosition(x_, y_);
+    nouv->x = x_;
+    nouv->y = y_;
 }
