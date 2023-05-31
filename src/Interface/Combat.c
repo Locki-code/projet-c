@@ -2,28 +2,6 @@
 #include <stdbool.h>
 #include "./Header/Combat.h"
 
-void statsPlayer(Player player)
-{
-    int pv = player->pv;
-    int attack = player->attack;
-    int defense = player->defense;
-
-    printf("Player\n------------\n pv : %d\n attack : %d\n defense : %d\n------------\n", pv, attack, defense);
-
-    return;
-}
-
-void statsEnemy(Enemy enemy)
-{
-    int pv = enemy->pv;
-    int attack = enemy->attack;
-    int defense = enemy->defense;
-
-    printf("Enemy\n------------\n pv : %d\n attack : %d\n defense : %d\n------------\n", pv, attack, defense);
-
-    return;
-}
-
 void isDead(Player player, Enemy enemy)
 {
     char choice = '0';

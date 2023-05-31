@@ -16,4 +16,6 @@ typedef struct player_ * Player;
 
 Player CreatePlayer(int x_, int y_);
 
+void statsPlayer(Player player);
+
 #endif

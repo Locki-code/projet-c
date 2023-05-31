@@ -13,3 +13,14 @@ Player CreatePlayer(int x_, int y_)
     nouv->x = x_;
     nouv->y = y_;
 }
+
+void statsPlayer(Player player)
+{
+    int pv = player->pv;
+    int attack = player->attack;
+    int defense = player->defense;
+
+    printf("Player\n------------\n pv : %d\n attack : %d\n defense : %d\n------------\n", pv, attack, defense);
+
+    return;
+}
