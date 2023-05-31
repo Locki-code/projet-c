@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "Header/Player.h"
 
-Position CreatePosition(x_, y_){
+Position CreatePosition(int x_,int y_){
     Position pos = malloc(sizeof(struct position_));
     pos -> x = x_;
     pos -> y = y_;

@@ -9,7 +9,7 @@ struct position_
 };
 typedef struct position_ * Position;
 
-Position CreatePosition(x_, y_);
+Position CreatePosition(int x_,int y_);
 
 //Joueur principal
 struct  player_
