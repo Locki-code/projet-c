@@ -26,12 +26,6 @@ void affichemenu()
     }
 }
 
-void Start()
-{
-    
-
-
-}
 int main()
 {
     affichemenu();
