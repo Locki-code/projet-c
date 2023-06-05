@@ -1,17 +1,19 @@
 #ifndef PROJET_C_MATRIX_H
 #define PROJET_C_MATRIX_H
 
-typedef struct {
+struct matrix_ {
     int rowSize;
     char* data;
-} Matrix;
+};
 
-Matrix * newMatrix(int rowSize, char* data);
+typedef struct matrix_ * Matrix;
 
-void setElement(Matrix * mtx, int row, int col, char val);
+Matrix newMatrix(int rowSize, char * data);
 
-char getElement(Matrix * mtx, int row, int col);
+void setElement(Matrix mtx, int row, int col, char val);
 
-int printMatrix(Matrix * mtx);
+char getElement(Matrix mtx, int row, int col);
+
+int printMatrix(Matrix mtx);
 
 #endif //PROJET_C_MATRIX_H
