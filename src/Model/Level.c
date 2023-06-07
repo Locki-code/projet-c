@@ -19,5 +19,4 @@ Level createLevel(
     newLevel->filename_south = &filename_south;
     newLevel->filename_west = &filename_west;
     return newLevel;
-};
-
+}
