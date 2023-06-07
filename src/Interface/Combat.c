@@ -79,7 +79,7 @@ void executeRound(Player player, Enemy enemy)
     return;
 }
 
-void actionInterface(Player player, Enemy enemy)
+void actionPlayer(Player player, Enemy enemy)
 {
     char choice = '0';
 

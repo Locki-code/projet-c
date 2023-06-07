@@ -8,6 +8,6 @@ void isDead(Player p, Enemy e);
 
 void executeRound(Player p, Enemy e);
 
-void actionInterface(Player p, Enemy e);
+void actionPlayer(Player p, Enemy e);
 
 #endif
