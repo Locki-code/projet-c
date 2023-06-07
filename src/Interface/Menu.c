@@ -3,13 +3,13 @@
 
 
 
-void affichemenu()
+void DisplayMenu()
 {
-    int choix;
+    int choice;
     printf("%s","Bienvenue, dans Maze & Mind game!\n");
     printf("1 - Nouvelle partie\n2 - Crédits\n3 - Quitter\n");//faire chcp 65001 dans un terminal avant d'executer le .exe pour faire de l'affichage utf-8
-    scanf("%d",&choix);
-    switch(choix)
+    scanf("%d",&choice);
+    switch(choice)
     {
     case 1:
         /* appellera la fonction reader et deplacement en boucle tant que pas victoire ou défaite*/
@@ -32,6 +32,6 @@ void affichemenu()
 
 int main()
 {
-    affichemenu();
+    DisplayMenu();
     return 0;
 }
