@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 //Joueur principal
-struct  enemy_
+struct enemy_
 {
     char name;
     int pv;
