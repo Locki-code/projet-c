@@ -7,7 +7,7 @@ void isDead(Player player, Enemy enemy)
     char choice = '0';
 
     //Le joueur meurt, fin du jeu
-    if (player->pv <= 0)
+    if (player->health <= 0)
     {
         system("cls");
         printf("You died\n\n\nExit(X)");
@@ -26,7 +26,7 @@ void isDead(Player player, Enemy enemy)
     //L'ennemi meurt, retour à la carte et ajout des bonus permanents
     else if (enemy->pv <= 0)
     {
-        player->pv_max = player->pv_max + 1;
+        player->health_max = player->health_max + 1;
         player->attack = player->attack + 1;
         //retour à la carte
     }
@@ -35,7 +35,7 @@ void isDead(Player player, Enemy enemy)
 }
 
 //baisse les pv de l'ennemi et du joueur en fonction de la defense et de l'attaque des deux
-void pvDown(Player player, Enemy enemy)
+void executeRound(Player player, Enemy enemy)
 {
     //L'ennemi prend obligatoirement 1 de dégats même si sa défense est > à l'attaque du joueur
     if (enemy->defense - player->attack >= 0)
@@ -46,13 +46,13 @@ void pvDown(Player player, Enemy enemy)
         //Le joueur prend obligatoirement 1 de dégats même si sa défense est > à l'attaque de l'ennemi
         if (player->defense - enemy->attack >= 0)
         {
-            player->pv = player->pv - 1;
+            player->health = player->health - 1;
             isDead(player,enemy);
         }
         //Le joueur prend le nombre de dégats calculés en fonction de sa défense et de l'attaque de l'ennemi
         else
         {
-            player->pv = player->pv - enemy->attack + player->defense;
+            player->health = player->health - enemy->attack + player->defense;
             isDead(player,enemy);
         }    
     }
@@ -65,13 +65,13 @@ void pvDown(Player player, Enemy enemy)
         //Le joueur prend obligatoirement 1 de dégats même si sa défense est > à l'attaque de l'ennemi
         if (player->defense - enemy->attack >= 0)
         {
-            player->pv = player->pv - 1;
+            player->health = player->health - 1;
             isDead(player,enemy);
         }
         //Le joueur prend le nombre de dégats calculés en fonction de sa défense et de l'attaque de l'ennemi
         else
         {
-            player->pv = player->pv - enemy->attack + player->defense;
+            player->health = player->health - enemy->attack + player->defense;
             isDead(player,enemy);
         }
     }
@@ -79,16 +79,16 @@ void pvDown(Player player, Enemy enemy)
     return;
 }
 
-void action(Player player, Enemy enemy)
+void actionPlayer(Player player, Enemy enemy)
 {
     char choice = '0';
 
     printf("Action\n----------\n Attack (A)\n Escape (E)\n----------\n");
 
-    pvDown(player, enemy);
+    executeRound(player, enemy);
 
-    statsPlayer(player);
-    statsEnemy(enemy);
+    showStatsPlayer(player);
+    showStatsEnemy(enemy);
 
     while(true)
     {
@@ -98,10 +98,10 @@ void action(Player player, Enemy enemy)
         if (choice == 'A' || choice == 'a')
         {
             printf("You're attacking\n\n");
-            pvDown(player, enemy);
+            executeRound(player, enemy);
 
-            statsPlayer(player);
-            statsEnemy(enemy);
+            showStatsPlayer(player);
+            showStatsEnemy(enemy);
         }
         
         else if (choice == 'E' || choice == 'e')

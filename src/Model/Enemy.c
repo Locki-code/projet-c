@@ -6,14 +6,15 @@
 
 Enemy CreateEnemy(char name_, int pv_, int attack_, int defense_)
 {
-    Enemy nouv = malloc(sizeof(struct enemy_));
-    nouv->name = name_;
-    nouv->attack = attack_;
-    nouv->pv = pv_;
-    nouv->defense = defense_;
+    Enemy newEnemy = malloc(sizeof(struct enemy_));
+    newEnemy->name = name_;
+    newEnemy->attack = attack_;
+    newEnemy->pv = pv_;
+    newEnemy->defense = defense_;
+    return newEnemy;
 }
 
-void statsEnemy(Enemy enemy)
+void showStatsEnemy(Enemy enemy)
 {
     int pv = enemy->pv;
     int attack = enemy->attack;

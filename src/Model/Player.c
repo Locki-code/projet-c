@@ -2,25 +2,45 @@
 #include <stdio.h>
 #include "Header/Player.h"
 
-Player CreatePlayer(int x_, int y_)
+Player CreatePlayer()
 {
-    Player nouv = malloc(sizeof(struct player_));
-    nouv->pv_max = 10;
-    nouv->pv = 10;
-    nouv->attack = 2;
-    nouv->defense = 1;
-    nouv->nb_cle = 0;
-    nouv->x = x_;
-    nouv->y = y_;
+    Player newPlayer = malloc(sizeof(struct player_));
+    newPlayer->health_max = 10;
+    newPlayer->health = 10;
+    newPlayer->attack = 2;
+    newPlayer->defense = 1;
+    newPlayer->keys = 0;
+    newPlayer->x = 15;
+    newPlayer->y = 1;
+    return newPlayer;
 }
 
-void statsPlayer(Player player)
+void showStatsPlayer(Player player)
 {
-    int pv = player->pv;
+    int health = player->health;
+    int health_max = player->health_max;
     int attack = player->attack;
     int defense = player->defense;
+    int keys = player->keys;
 
-    printf("Player\n------------\n pv : %d\n attack : %d\n defense : %d\n------------\n", pv, attack, defense);
+    printf(
+            "Player\n------------\n Health : %d/%d\n attack : %d\n defense : %d\n keys : %d\n------------\n",
+            health, health_max, attack, defense, keys);
+}
 
-    return;
+void resetLife(Player player){
+    player->health = player->health_max;
+}
+
+void resetPosition(Player player){
+    player->x = 15;
+    player->y = 1;
+}
+
+void addDefense(Player player, int value){
+    player->defense = player->defense + value;
+}
+
+void addHealthMax(Player player, int value){
+    player->health_max = player->health_max + value;
 }
