@@ -4,18 +4,24 @@
 //Joueur principal
 struct  player_
 {
-    int pv_max;
-    int pv;
+    int health_max;
+    int health;
     int attack;
     int defense;
-    int nb_cle;
+    int keys;
     int x;
     int y;
 };
 typedef struct player_ * Player;
 
-Player CreatePlayer(int x_, int y_);
+Player CreatePlayer();
 
-void statsPlayer(Player player);
+void resetLife(Player player);
+
+void resetPosition(Player player);
+
+void addDefense(Player player, int value);
+
+void addHealthMax(Player player, int value);
 
 #endif
