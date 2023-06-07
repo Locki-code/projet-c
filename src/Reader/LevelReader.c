@@ -7,6 +7,27 @@
 
 FILE *fptr;
 
+// Funtion removing spaces from string
+char * removeSpacesFromStr(char *string)
+{
+    // non_space_count to keep the frequency of non space characters
+    int non_space_count = 0;
+
+    //Traverse a string and if it is non space character then, place it at index non_space_count
+    for (int i = 0; string[i] != '\0'; i++)
+    {
+        if (string[i] != ' ')
+        {
+            string[non_space_count] = string[i];
+            non_space_count++;//non_space_count incremented
+        }
+    }
+
+    //Finally placing final character at the string end
+    string[non_space_count] = '\0';
+    return string;
+}
+
 char* removeChar(char *str, char c) {
     int i, j;
     int len = strlen(str);
@@ -37,18 +58,19 @@ Level readLevelFile(char* filename) {
             myString[strcspn(myString, "\n")] = '\0';
             strcat(dataString, myString);
         } else {
+            char *token = strtok( removeSpacesFromStr(myString), ":");
+            token = strtok(NULL, ":");
             if(cpt == 30){
-                newLevel->filename_east = ";";
+                newLevel->filename_east = token;
             } else if (cpt == 31){
-                newLevel->filename_south = ";";
+                newLevel->filename_south = token;
             } else if (cpt == 32){
-                newLevel->filename_west = ";";
+                newLevel->filename_west = token;
             } else if (cpt == 33){
-                newLevel->filename_north = ";";
+                newLevel->filename_north = token;
             }
         }
         cpt++;
-        printf("%s", myString);
     }
     newLevel->matrix = (Matrix) newMatrix(30, dataString);
 
