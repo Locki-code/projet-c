@@ -4,13 +4,15 @@
 
 
 
-Enemy CreateEnemy(char name_, int pv_, int attack_, int defense_)
+Enemy CreateEnemy(char name_, int pv_, int attack_, int defense_, int x_, int y_)
 {
     Enemy newEnemy = malloc(sizeof(struct enemy_));
     newEnemy->name = name_;
     newEnemy->attack = attack_;
     newEnemy->pv = pv_;
     newEnemy->defense = defense_;
+    newEnemy->x = x_;
+    newEnemy->y = y_;
     return newEnemy;
 }
 
