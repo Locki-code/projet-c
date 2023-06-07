@@ -11,7 +11,7 @@ Level createLevel(
         char filename_south,
         char filename_west
         ){
-    Level newLevel = malloc(sizeof(struct Level));
+    Level newLevel = malloc(sizeof(struct level_));
     newLevel->filename = &filename;
     newLevel->matrix = matrix;
     newLevel->filename_north = &filename_north;
