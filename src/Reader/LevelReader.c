@@ -8,8 +8,7 @@
 FILE *fptr;
 
 // Funtion removing spaces from string
-char * removeSpacesFromStr(char *string)
-{
+char * removeSpacesFromStr(char *string) {
     // non_space_count to keep the frequency of non space characters
     int non_space_count = 0;
 
@@ -26,18 +25,6 @@ char * removeSpacesFromStr(char *string)
     //Finally placing final character at the string end
     string[non_space_count] = '\0';
     return string;
-}
-
-char* removeChar(char *str, char c) {
-    int i, j;
-    int len = strlen(str);
-    for (i = j = 0; i < len; i++) {
-        if (str[i] != c) {
-            str[j++] = str[i];
-        }
-    }
-    str[j] = '\0';
-    return str;
 }
 
 Level readLevelFile(char* filename) {
