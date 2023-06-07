@@ -19,8 +19,9 @@ void statsPlayer(Player player)
     int pv = player->pv;
     int attack = player->attack;
     int defense = player->defense;
+    int key = player->nb_cle;
 
-    printf("Player\n------------\n pv : %d\n attack : %d\n defense : %d\n------------\n", pv, attack, defense);
+    printf("Player\n------------\n pv : %d\n attack : %d\n defense : %d\n keys : \n------------\n", pv, attack, defense, key);
 
     return;
 }
