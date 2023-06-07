@@ -6,8 +6,8 @@
 
 void isDead(Player p, Enemy e);
 
-void pvDown(Player p, Enemy e);
+void executeRound(Player p, Enemy e);
 
-void action(Player p, Enemy e);
+void actionInterface(Player p, Enemy e);
 
 #endif

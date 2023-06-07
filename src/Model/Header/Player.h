@@ -16,6 +16,8 @@ typedef struct player_ * Player;
 
 Player CreatePlayer();
 
+void showStatsPlayer(Player player);
+
 void resetLife(Player player);
 
 void resetPosition(Player player);

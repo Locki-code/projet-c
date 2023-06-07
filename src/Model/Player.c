@@ -26,8 +26,6 @@ void showStatsPlayer(Player player)
     printf(
             "Player\n------------\n Health : %d/%d\n attack : %d\n defense : %d\n keys : %d\n------------\n",
             health, health_max, attack, defense, keys);
-
-    return;
 }
 
 void resetLife(Player player){
