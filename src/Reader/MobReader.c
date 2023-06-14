@@ -54,7 +54,7 @@ LibraryEnemy readAllMobs(FILE * fp){
 }
 
 void printMob(Enemy en){
-    printf("%c:\n%d\n%d\n%d\n\n", en->name, en->pv, en->attack, en->defense);
+    printf("%c:\n%d\n%d\n%d\n\n", en->name, en->health, en->attack, en->defense);
 }
 
 //main de test
