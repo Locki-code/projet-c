@@ -2,6 +2,7 @@
 #include "../Model/Header/Player.h"
 #include "../Model/Header/Level.h"
 #include "../Model/Level.c"
+#include "../Interface/Combat.c"
 
 void move(Player player, Level level)
 {
@@ -12,12 +13,71 @@ void move(Player player, Level level)
         scanf_s("%s", c);
         switch(c[0]) {
             case 'z':
-                movementWanted = getElement(level->matrix, player->y + 1, player->x);
+                movementWanted = getElement(level->matrix, player->y - 1, player->x);
                 switch (movementWanted) {
                     case ' ':
                         setElement(level->matrix, player->y, player->x, ' ');
-                        player->y += 1;
+                        player->y -= 1;
                         setElement(level->matrix, player->y, player->x, '@');
+                        continue;
+                    case 'o':
+                        if(player->keys >0){
+                            player->keys -= 1;
+                            setElement(level->matrix, player->y, player->x, ' ');
+                            player->y -= 1;
+                            setElement(level->matrix, player->y, player->x, '@');
+                            continue;
+                        }
+                        else {
+                            printf("You can't open the door, key needed !");
+                        }
+                    case '!':
+                        player->keys += 1;
+                        setElement(level->matrix, player->y, player->x, ' ');
+                        player->y -= 1;
+                        setElement(level->matrix, player->y, player->x, '@');
+                        continue;
+                    case 'S':
+                        player->health = player->health_max;
+                        setElement(level->matrix, player->y, player->x, ' ');
+                        player->y -= 1;
+                        setElement(level->matrix, player->y, player->x, '@');
+                        continue;
+                    case '1':
+                        player->attack += 1;
+                        setElement(level->matrix, player->y, player->x, ' ');
+                        player->y -= 1;
+                        setElement(level->matrix, player->y, player->x, '@');
+                        continue;
+                    case '2':
+                        player->defense += 1;
+                        setElement(level->matrix, player->y, player->x, ' ');
+                        player->y -= 1;
+                        setElement(level->matrix, player->y, player->x, '@');
+                        continue;
+                    case '3':
+                        player->health_max += 3;
+                        setElement(level->matrix, player->y, player->x, ' ');
+                        player->y -= 1;
+                        setElement(level->matrix, player->y, player->x, '@');
+                        continue;
+                    case 'A':
+                    case 'B':
+                    case 'C':
+                        // Mob mob = getMob();
+                        // if (actionPlayer(player, mob)){
+                        if (true){
+                            // check who is dead
+                        //    if (playerIsDead()){
+                            if (false){
+                                break; // Game Over !!!
+                            }
+                            player->health_max += 1;
+                            player->attack += 1;
+                            setElement(level->matrix, player->y, player->x, ' ');
+                            player->y -= 1;
+                            setElement(level->matrix, player->y, player->x, '@');
+                        }
                         continue;
                     default:
                         printf("You can't move here");
@@ -30,20 +90,137 @@ void move(Player player, Level level)
                         setElement(level->matrix, player->y, player->x, ' ');
                         player->x -= 1;
                         setElement(level->matrix, player->y, player->x, '@');
+                        continue;case 'o':
+                        if(player->keys >0){
+                            player->keys -= 1;
+                            setElement(level->matrix, player->y, player->x, ' ');
+                            player->x -= 1;
+                            setElement(level->matrix, player->y, player->x, '@');
+                            continue;
+                        }
+                        else {
+                            printf("You can't open the door, key needed !");
+                        }
+                    case '!':
+                        player->keys += 1;
+                        setElement(level->matrix, player->y, player->x, ' ');
+                        player->x -= 1;
+                        setElement(level->matrix, player->y, player->x, '@');
+                        continue;
+                    case 'S':
+                        player->health = player->health_max;
+                        setElement(level->matrix, player->y, player->x, ' ');
+                        player->x -= 1;
+                        setElement(level->matrix, player->y, player->x, '@');
+                        continue;
+                    case '1':
+                        player->attack += 1;
+                        setElement(level->matrix, player->y, player->x, ' ');
+                        player->x -= 1;
+                        setElement(level->matrix, player->y, player->x, '@');
+                        continue;
+                    case '2':
+                        player->defense += 1;
+                        setElement(level->matrix, player->y, player->x, ' ');
+                        player->x -= 1;
+                        setElement(level->matrix, player->y, player->x, '@');
+                        continue;
+                    case '3':
+                        player->health_max += 3;
+                        setElement(level->matrix, player->y, player->x, ' ');
+                        player->x -= 1;
+                        setElement(level->matrix, player->y, player->x, '@');
+                        continue;
+                    case 'A':
+                    case 'B':
+                    case 'C':
+                        // Mob mob = getMob();
+                        // if (actionPlayer(player, mob)){
+                        if (true){
+                            // check who is dead
+                            //    if (playerIsDead()){
+                            if (false){
+                                break; // Game Over !!!
+                            }
+                            player->health_max += 1;
+                            player->attack += 1;
+                            setElement(level->matrix, player->y, player->x, ' ');
+                            player->x -= 1;
+                            setElement(level->matrix, player->y, player->x, '@');
+                        }
                         continue;
                     default:
                         printf("You can't move here");
                         continue;
                 }
             case 's':
-                movementWanted = getElement(level->matrix, player->y - 1, player->x);
+                movementWanted = getElement(level->matrix, player->y + 1, player->x);
                 switch (movementWanted) {
                     case ' ':
                         setElement(level->matrix, player->y, player->x, ' ');
-                        player->y -= 1;
+                        player->y += 1;
+                        setElement(level->matrix, player->y, player->x, '@');
+                        continue;case 'o':
+                        if(player->keys >0){
+                            player->keys -= 1;
+                            setElement(level->matrix, player->y, player->x, ' ');
+                            player->y += 1;
+                            setElement(level->matrix, player->y, player->x, '@');
+                            continue;
+                        }
+                        else {
+                            printf("You can't open the door, key needed !");
+                        }
+                    case '!':
+                        player->keys += 1;
+                        setElement(level->matrix, player->y, player->x, ' ');
+                        player->y += 1;
                         setElement(level->matrix, player->y, player->x, '@');
                         continue;
+                    case 'S':
+                        player->health = player->health_max;
+                        setElement(level->matrix, player->y, player->x, ' ');
+                        player->y += 1;
+                        setElement(level->matrix, player->y, player->x, '@');
+                        continue;
+                    case '1':
+                        player->attack += 1;
+                        setElement(level->matrix, player->y, player->x, ' ');
+                        player->y += 1;
+                        setElement(level->matrix, player->y, player->x, '@');
+                        continue;
+                    case '2':
+                        player->defense += 1;
+                        setElement(level->matrix, player->y, player->x, ' ');
+                        player->y += 1;
+                        setElement(level->matrix, player->y, player->x, '@');
+                        continue;
+                    case '3':
+                        player->health_max += 3;
+                        setElement(level->matrix, player->y, player->x, ' ');
+                        player->y += 1;
+                        setElement(level->matrix, player->y, player->x, '@');
+                        continue;
+                    case 'A':
+                    case 'B':
+                    case 'C':
+                        // Mob mob = getMob();
+                        // if (actionPlayer(player, mob)){
+                        if (true){
+                            // check who is dead
+                            //    if (playerIsDead()){
+                            if (false){
+                                break; // Game Over !!!
+                            }
+                            player->health_max += 1;
+                            player->attack += 1;
+                            setElement(level->matrix, player->y, player->x, ' ');
+                            player->y += 1;
+                            setElement(level->matrix, player->y, player->x, '@');
+                        }
+                        continue;
                     default:
+                        printf("Movement : %c", movementWanted);
                         printf("You can't move here");
                         continue;
                 }
@@ -54,6 +231,64 @@ void move(Player player, Level level)
                         setElement(level->matrix, player->y, player->x, ' ');
                         player->x += 1;
                         setElement(level->matrix, player->y, player->x, '@');
+                        continue;case 'o':
+                        if(player->keys >0){
+                            player->keys -= 1;
+                            setElement(level->matrix, player->y, player->x, ' ');
+                            player->x += 1;
+                            setElement(level->matrix, player->y, player->x, '@');
+                            continue;
+                        }
+                        else {
+                            printf("You can't open the door, key needed !");
+                        }
+                    case '!':
+                        player->keys += 1;
+                        setElement(level->matrix, player->y, player->x, ' ');
+                        player->x += 1;
+                        setElement(level->matrix, player->y, player->x, '@');
+                        continue;
+                    case 'S':
+                        player->health = player->health_max;
+                        setElement(level->matrix, player->y, player->x, ' ');
+                        player->x += 1;
+                        setElement(level->matrix, player->y, player->x, '@');
+                        continue;
+                    case '1':
+                        player->attack += 1;
+                        setElement(level->matrix, player->y, player->x, ' ');
+                        player->x += 1;
+                        setElement(level->matrix, player->y, player->x, '@');
+                        continue;
+                    case '2':
+                        player->defense += 1;
+                        setElement(level->matrix, player->y, player->x, ' ');
+                        player->x += 1;
+                        setElement(level->matrix, player->y, player->x, '@');
+                        continue;
+                    case '3':
+                        player->health_max += 3;
+                        setElement(level->matrix, player->y, player->x, ' ');
+                        player->x += 1;
+                        setElement(level->matrix, player->y, player->x, '@');
+                        continue;
+                    case 'A':
+                    case 'B':
+                    case 'C':
+                        // Mob mob = getMob();
+                        // if (actionPlayer(player, mob)){
+                        if (true){
+                            // check who is dead
+                            //    if (playerIsDead()){
+                            if (false){
+                                break; // Game Over !!!
+                            }
+                            player->health_max += 1;
+                            player->attack += 1;
+                            setElement(level->matrix, player->y, player->x, ' ');
+                            player->x += 1;
+                            setElement(level->matrix, player->y, player->x, '@');
+                        }
                         continue;
                     default:
                         printf("You can't move here");
