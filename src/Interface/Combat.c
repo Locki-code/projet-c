@@ -54,7 +54,7 @@ void executeRound(Player player, Enemy enemy)
         {
             player->health = player->health - enemy->attack + player->defense;
             isDead(player,enemy);
-        }    
+        }
     }
     //L'ennemi prend le nombre de dégats calculés en fonction de sa défense et de l'attaque du joueur
     else
@@ -68,13 +68,14 @@ void executeRound(Player player, Enemy enemy)
             player->health = player->health - 1;
             isDead(player,enemy);
         }
-        //Le joueur prend le nombre de dégats calculés en fonction de sa défense et de l'attaque de l'ennemi
+            //Le joueur prend le nombre de dégats calculés en fonction de sa défense et de l'attaque de l'ennemi
         else
         {
             player->health = player->health - enemy->attack + player->defense;
             isDead(player,enemy);
         }
     }
+
 
     return;
 }

@@ -18,7 +18,7 @@ char * removeSpacesFromStr(char *string) {
         if (string[i] != ' ')
         {
             string[non_space_count] = string[i];
-            non_space_count++;//non_space_count incremented
+            non_space_count++; // non_space_count incremented
         }
     }
 
@@ -27,14 +27,14 @@ char * removeSpacesFromStr(char *string) {
     return string;
 }
 
-Level readLevelFile(char* filename) {
+Level readLevelFile(char* pathFile, char* filename) {
     Level newLevel = (Level) malloc(sizeof(struct level_));
     newLevel->filename = filename;
     char myString[100];
     char dataString[3000] = "";
 
 // Open a file in read mode
-    fptr = fopen(filename, "r");
+    fptr = fopen(pathFile, "r");
 
 // Read the content and print it
     int cpt = 0;
