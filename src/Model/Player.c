@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h>
 #include "Header/Player.h"
 
 Player CreatePlayer()
@@ -11,7 +12,7 @@ Player CreatePlayer()
     newPlayer->defense = 1;
     newPlayer->keys = 0;
     newPlayer->x = 15;
-    newPlayer->y = 1;
+    newPlayer->y = 2;
     return newPlayer;
 }
 
@@ -34,7 +35,7 @@ void resetLife(Player player){
 
 void resetPosition(Player player){
     player->x = 15;
-    player->y = 1;
+    player->y = 2;
 }
 
 void addDefense(Player player, int value){
@@ -43,4 +44,16 @@ void addDefense(Player player, int value){
 
 void addHealthMax(Player player, int value){
     player->health_max = player->health_max + value;
+}
+
+bool isPlayerDead(Player player)
+{
+    if(player->health <= 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
