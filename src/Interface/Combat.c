@@ -28,7 +28,7 @@ void isDead(Player player, Enemy enemy)
     {
         player->health_max = player->health_max + 1;
         player->attack = player->attack + 1;
-        //retour à la carte
+        return;
     }
 
     return;
@@ -60,21 +60,20 @@ void executeRound(Player player, Enemy enemy)
     else
     {
         enemy->pv = enemy->pv - player->attack + enemy->defense;
-        isDead(player,enemy);
 
         //Le joueur prend obligatoirement 1 de dégats même si sa défense est > à l'attaque de l'ennemi
         if (player->defense - enemy->attack >= 0)
         {
             player->health = player->health - 1;
-            isDead(player,enemy);
         }
         //Le joueur prend le nombre de dégats calculés en fonction de sa défense et de l'attaque de l'ennemi
         else
         {
             player->health = player->health - enemy->attack + player->defense;
-            isDead(player,enemy);
         }
+        isDead(player,enemy);
     }
+
 
     return;
 }
