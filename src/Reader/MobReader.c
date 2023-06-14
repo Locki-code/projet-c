@@ -55,9 +55,9 @@ Enemy * readMobFile(char * nameFile)
     return tab;
 }
 
-/*int main(){
+int main(){
     Enemy * tab;
     tab = readMobFile("C:/Users/jacqu/Desktop/Projet-C/projet-c/config/ennemy.mob");
 
     printf("%c:%d, %d, %d\n", tab[1]->name, tab[1]->pv, tab[1]->defense, tab[1]->attack);
-}*/
+}
