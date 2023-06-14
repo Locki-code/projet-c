@@ -3,8 +3,7 @@
 #include <stdbool.h>
 #include "Header/Player.h"
 
-Player CreatePlayer()
-{
+Player CreatePlayer(){
     Player newPlayer = malloc(sizeof(struct player_));
     newPlayer->health_max = 10;
     newPlayer->health = 10;
@@ -16,8 +15,7 @@ Player CreatePlayer()
     return newPlayer;
 }
 
-void showStatsPlayer(Player player)
-{
+void showStatsPlayer(Player player){
     int health = player->health;
     int health_max = player->health_max;
     int attack = player->attack;
@@ -46,14 +44,6 @@ void addHealthMax(Player player, int value){
     player->health_max = player->health_max + value;
 }
 
-bool isPlayerDead(Player player)
-{
-    if(player->health <= 0)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+bool isPlayerDead(Player player){
+    return player->health <= 0;
 }

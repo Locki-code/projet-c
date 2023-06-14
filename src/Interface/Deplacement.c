@@ -1,8 +1,14 @@
-#include "Header/Deplacement.h"
+#include "./Header/Deplacement.h"
 #include "../Model/Header/Player.h"
 #include "../Model/Header/Level.h"
 #include "../Model/Level.c"
-#include "../Interface/Combat.c"
+#include "../Model/Header/Enemy.h"
+#include "../Model/Enemy.c"
+#include "./Combat.c"
+#include <stdbool.h>
+#include "./Header/Combat.h"
+#include "../Model/Header/Player.h"
+#include "../Model/Player.c"
 
 void move(Player player, Level level)
 {
@@ -64,13 +70,11 @@ void move(Player player, Level level)
                     case 'A':
                     case 'B':
                     case 'C':
-                        // Mob mob = getMob();
-                        // if (actionPlayer(player, mob)){
-                        if (true){
-                            // check who is dead
-                        //    if (playerIsDead()){
-                            if (false){
-                                break; // Game Over !!!
+                        if(true){}
+                        Enemy mob = CreateEnemy('A', 10, 6, 1); // TODO : Get the right enemy
+                        if(actionPlayer(player, mob)){
+                            if (isPlayerDead(player)){
+                                break; // TODO : Game Over !!!
                             }
                             player->health_max += 1;
                             player->attack += 1;
@@ -134,13 +138,11 @@ void move(Player player, Level level)
                     case 'A':
                     case 'B':
                     case 'C':
-                        // Mob mob = getMob();
-                        // if (actionPlayer(player, mob)){
-                        if (true){
-                            // check who is dead
-                            //    if (playerIsDead()){
-                            if (false){
-                                break; // Game Over !!!
+                        if(true){}
+                        Enemy mob = CreateEnemy('A', 10, 6, 1); // TODO : Get the right enemy
+                        if(actionPlayer(player, mob)){
+                            if (isPlayerDead(player)){
+                                break; // TODO : Game Over !!!
                             }
                             player->health_max += 1;
                             player->attack += 1;
@@ -204,13 +206,11 @@ void move(Player player, Level level)
                     case 'A':
                     case 'B':
                     case 'C':
-                        // Mob mob = getMob();
-                        // if (actionPlayer(player, mob)){
-                        if (true){
-                            // check who is dead
-                            //    if (playerIsDead()){
-                            if (false){
-                                break; // Game Over !!!
+                        if(true){}
+                        Enemy mob = CreateEnemy('A', 10, 6, 1); // TODO : Get the right enemy
+                        if(actionPlayer(player, mob)){
+                            if (isPlayerDead(player)){
+                                break; // TODO : Game Over !!!
                             }
                             player->health_max += 1;
                             player->attack += 1;
@@ -275,13 +275,11 @@ void move(Player player, Level level)
                     case 'A':
                     case 'B':
                     case 'C':
-                        // Mob mob = getMob();
-                        // if (actionPlayer(player, mob)){
-                        if (true){
-                            // check who is dead
-                            //    if (playerIsDead()){
-                            if (false){
-                                break; // Game Over !!!
+                        if(true){}
+                        Enemy mob = CreateEnemy('A', 10, 6, 1); // TODO : Get the right enemy
+                        if(actionPlayer(player, mob)){
+                            if (isPlayerDead(player)){
+                                break; // TODO : Game Over !!!
                             }
                             player->health_max += 1;
                             player->attack += 1;

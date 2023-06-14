@@ -19,7 +19,4 @@ int main(int argc, char *argv[]) {
     Player player = CreatePlayer();
     setElement(level->matrix, player->y, player->x, '@');
     move(player, level);
-    //wprintf("%lc", getElement(level->matrix, 0, 1));
-    //Matrix matrix = newMatrix(5, "##^###   #<   >#   ###v##");
-    //printMatrix(level->matrix);
 }
