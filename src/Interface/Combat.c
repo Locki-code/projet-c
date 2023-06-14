@@ -2,38 +2,6 @@
 #include <stdbool.h>
 #include "./Header/Combat.h"
 
-/*void isDead(Player player, Enemy enemy)
-{
-    char choice = '0';
-
-    //Le joueur meurt, fin du jeu
-    if (player->health <= 0)
-    {
-        system("cls");
-        printf("You died\n\n\nExit(X)");
-
-        while (true)
-        {
-            scanf("%c", &choice);
-
-            if (choice == 'X' || choice == 'x')
-            {
-                exit(EXIT_SUCCESS);
-                break;
-            }
-        }
-    }
-    //L'ennemi meurt, retour à la carte et ajout des bonus permanents
-    else if (enemy->health <= 0)
-    {
-        player->health_max = player->health_max + 1;
-        player->attack = player->attack + 1;
-        //retour à la carte
-    }
-
-    return;
-}*/
-
 //baisse les pv de l'ennemi et du joueur en fonction de la defense et de l'attaque des deux
 bool executeRound(Player player, Enemy enemy)
 {

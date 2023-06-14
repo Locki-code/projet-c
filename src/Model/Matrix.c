@@ -17,13 +17,11 @@ Matrix newMatrix(int rowSize_, char* data_) {
     return matrix;
 }
 
-void setElement(Matrix mtx, int row, int col, char val)
-{
+void setElement(Matrix mtx, int row, int col, char val) {
     mtx->data[(row-1) * mtx->rowSize + (col-1)] = val;
 }
 
 char getElement(Matrix mtx, int row, int col) {
-    setlocale(LC_ALL, "en_US.UTF-8");
     return mtx->data[(row-1) * mtx->rowSize + (col-1)];
 }
 

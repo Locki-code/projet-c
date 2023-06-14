@@ -12,7 +12,7 @@ Player CreatePlayer()
     newPlayer->defense = 1;
     newPlayer->keys = 0;
     newPlayer->x = 15;
-    newPlayer->y = 1;
+    newPlayer->y = 2;
     return newPlayer;
 }
 
@@ -35,7 +35,7 @@ void resetLife(Player player){
 
 void resetPosition(Player player){
     player->x = 15;
-    player->y = 1;
+    player->y = 2;
 }
 
 void addDefense(Player player, int value){

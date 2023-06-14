@@ -3,8 +3,8 @@
 
 #include "../../Model/Header/Level.h"
 
-char* removeChar(char *str, char c);
+char * removeSpacesFromStr(char *string);
 
-Level ReadLevelFile(char* filename);
+Level readLevelFile(char* pathfile, char* filename);
 
 #endif //PROJET_C_LEVELREADER_H
