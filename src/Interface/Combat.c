@@ -52,10 +52,10 @@ bool actionPlayer(Player player, Enemy enemy)
     return isEnemyDead(enemy) || isPlayerDead(player);
 }
 
-void main()
+/*void main()
 {
     Player player = CreatePlayer();
-    Enemy enemy = CreateEnemy('A', 10, 6, 1);
+    Enemy enemy = CreateEnemy('A', 10, 2, 1);
 
     actionPlayer(player, enemy);
-}
+}*/
