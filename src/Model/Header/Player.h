@@ -26,4 +26,6 @@ void addDefense(Player player, int value);
 
 void addHealthMax(Player player, int value);
 
+bool isPlayerDead(Player player);
+
 #endif
