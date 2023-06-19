@@ -33,7 +33,7 @@ bool actionPlayer(Player player, Enemy enemy)
 
         printf("Action\n----------\n Attack (A)\n Escape (E)\n----------\n");
 
-        scanf("%c", &choice);
+        scanf_s("%c", &choice);
         fflush(stdin);
 
         printf("\n\n\n");
@@ -45,17 +45,8 @@ bool actionPlayer(Player player, Enemy enemy)
         else if (choice == 'E' || choice == 'e')
         {
             printf("Escape\n");
-            return false;
             break;
         }
     }
     return isEnemyDead(enemy) || isPlayerDead(player);
-}
-
-void main()
-{
-    Player player = CreatePlayer();
-    Enemy enemy = CreateEnemy('A', 10, 6, 1);
-
-    actionPlayer(player, enemy);
 }

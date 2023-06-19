@@ -19,4 +19,5 @@ Enemy CreateEnemy(char name_, int health_, int attack_, int defense_);
 void showStatsEnemy(Enemy enemy);
 
 bool isEnemyDead(Enemy enemy);
+
 #endif

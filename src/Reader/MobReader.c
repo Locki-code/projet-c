@@ -3,6 +3,8 @@
 #include "Header/MobReader.h"
 #include <string.h>
 
+FILE * fp;
+
 //permet de découper un ligne en deux via le séparateur ":" et d'extraire le chiffre de la partie de droite
 int getDigit(char * def){
     char * token = strtok(def, ":");
@@ -42,7 +44,8 @@ Enemy readMob(FILE * fp){
 }
 
 //lit tous les mobs à partir de la fonction précedente (max 5 mobs)
-LibraryEnemy readAllMobs(FILE * fp){
+LibraryEnemy readAllMobs(char* filename){
+    fp = fopen(filename, "r");
     Enemy tmp = CreateEnemy('O', 0, 0, 0);
     LibraryEnemy lib = CreateLibraryEnemy();
     for(int i=0; i<5; i++)
