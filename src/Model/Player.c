@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <stdbool.h>
 #include "Header/Player.h"
 
 Player CreatePlayer(){
@@ -11,7 +10,7 @@ Player CreatePlayer(){
     newPlayer->defense = 1;
     newPlayer->keys = 0;
     newPlayer->x = 15;
-    newPlayer->y = 2;
+    newPlayer->y = 15;
     return newPlayer;
 }
 

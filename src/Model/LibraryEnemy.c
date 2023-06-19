@@ -1,4 +1,4 @@
-#include "Header/libraryEnemy.h"
+#include "Header/LibraryEnemy.h"
 
 //constructeur
 LibraryEnemy CreateLibraryEnemy()
@@ -24,6 +24,7 @@ Enemy findByName(LibraryEnemy lib,  char name){
         }
 
     }
+    return NULL;
 }
 
 /*int main(){
