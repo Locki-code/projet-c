@@ -26,8 +26,7 @@ bool actionPlayer(Player player, Enemy enemy)
 {
     char choice = '0';
 
-    while(executeRound(player, enemy) == false)
-    {
+    while(executeRound(player, enemy) == false){
         showStatsPlayer(player);
         showStatsEnemy(enemy);
 

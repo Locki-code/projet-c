@@ -17,8 +17,9 @@ void move(Player player, Level level, LibraryEnemy enemyLib)
         char choice[1];
         scanf_s("%s", choice);
         switch(tolower(choice[0])) {
-            case 'z':
-                movementWanted = getElement(level->matrix, player->y - 1, player->x); // Récupère le contenu de la case où le joueur veut se diriger
+            case 'z': // TODO : create function for the chhoice to avoid repeat case
+                // Récupère le contenu de la case où le joueur veut se diriger
+                movementWanted = getElement(level->matrix, player->y - 1, player->x);
                 switch (movementWanted) {
                     case ' ':
                         setElement(level->matrix, player->y, player->x, ' ');
@@ -89,10 +90,10 @@ void move(Player player, Level level, LibraryEnemy enemyLib)
                                     );
                             mob = findByName(enemyLib, *name);
                         }*/
-                        Enemy mob = CreateEnemy('A', 5, 1, 1); // TODO : Get the right enemy
+                        Enemy mob = CreateEnemy('A', 5, 1, 1); // TODO : Get the saved enemy
                         if(actionPlayer(player, mob)){
                             if (isPlayerDead(player)){
-                                break; // TODO : Game Over !!!
+                                break;
                             }
                             player->health_max += 1;
                             player->attack += 1;
@@ -166,10 +167,10 @@ void move(Player player, Level level, LibraryEnemy enemyLib)
                     case 'B':
                     case 'C':
                         if(true){}
-                        Enemy mob = CreateEnemy('A', 5, 1, 1); // TODO : Get the right enemy
+                        Enemy mob = CreateEnemy('A', 5, 1, 1);
                         if(actionPlayer(player, mob)){
                             if (isPlayerDead(player)){
-                                break; // TODO : Game Over !!!
+                                break;
                             }
                             player->health_max += 1;
                             player->attack += 1;
@@ -243,10 +244,10 @@ void move(Player player, Level level, LibraryEnemy enemyLib)
                     case 'B':
                     case 'C':
                         if(true){}
-                        Enemy mob = CreateEnemy('A', 5, 1, 1); // TODO : Get the right enemy
+                        Enemy mob = CreateEnemy('A', 5, 1, 1);
                         if(actionPlayer(player, mob)){
                             if (isPlayerDead(player)){
-                                break; // TODO : Game Over !!!
+                                break;
                             }
                             player->health_max += 1;
                             player->attack += 1;
@@ -321,10 +322,10 @@ void move(Player player, Level level, LibraryEnemy enemyLib)
                     case 'B':
                     case 'C':
                         if(true){}
-                        Enemy mob = CreateEnemy('A', 5, 1, 1); // TODO : Get the right enemy
+                        Enemy mob = CreateEnemy('A', 5, 1, 1);
                         if(actionPlayer(player, mob)){
                             if (isPlayerDead(player)){
-                                break; // TODO : Game Over !!!
+                                break;
                             }
                             player->health_max += 1;
                             player->attack += 1;
