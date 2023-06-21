@@ -10,16 +10,15 @@ void move(Player player, Level level, LibraryEnemy enemyLib)
 {
     char* message = "";
     while(player->health>0) {
-        //system("cls");
-        printMatrix(level->matrix, player);
-        printf("%s\n", message);
+        printMatrix(level->matrix, player); // Affiche le niveau de jeu
+        printf("%s\n", message); // Affiche la dernière information utile pour le joueur
         message = "";
-        char movementWanted;
-        char c[1];
-        scanf_s("%s", c);
-        switch(tolower(c[0])) {
+        char movementWanted; // Case sur laquel le joueur veut se déplacer
+        char choice[1];
+        scanf_s("%s", choice);
+        switch(tolower(choice[0])) {
             case 'z':
-                movementWanted = getElement(level->matrix, player->y - 1, player->x);
+                movementWanted = getElement(level->matrix, player->y - 1, player->x); // Récupère le contenu de la case où le joueur veut se diriger
                 switch (movementWanted) {
                     case ' ':
                         setElement(level->matrix, player->y, player->x, ' ');
