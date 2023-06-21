@@ -33,7 +33,8 @@ int main(int argc, char *argv[]) {
                 continue;
             case 'c':
                 printf("C Project - 2023\n");
-                printf("Created By :\n\tLouise Horter\n\tJacques Mudoy\n\tHugo Assoignon\n\tLoick Mercier");
+                printf("Created By :\n\tLouise Horter\n\tJacques Mudoy\n\tHugo Assoignon\n\tLoick Mercier\n");
+                printf("Last Update : 21/06/2023\n");
                 continue;
             case 'e':
                 break;
